@@ -1,6 +1,7 @@
 # A very simple Bottle Hello World app for you to get started with...
 from bottle import default_app, route, Bottle, run, debug, template, redirect, TEMPLATE_PATH
 from utils.get_cpu_quota import get_cpu_quota
+from src.token.token_py import username_c, token_t
 import os
 
 path_directory = os.path.join(os.getcwd(), '..', 'views')
@@ -14,8 +15,8 @@ def home():
 
 @route('/cpu_quota')
 def cpu_quota():
-    username = 'CharlyOlinger'
-    token = '6c662ac265f1f9a47fa07f027bc52313e809e636'
+    username = username_c()
+    token = token_t()
     quota_info = get_cpu_quota(username, token)
     return quota_info
 
