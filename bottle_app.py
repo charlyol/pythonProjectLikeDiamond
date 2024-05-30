@@ -1,6 +1,6 @@
-
-# A very simple Bottle Hello World app for you to get started with...
+from flask import Flask, render_template
 from bottle import default_app, route
+
 import os
 @route('/')
 def hello_world():
