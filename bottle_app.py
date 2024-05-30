@@ -4,7 +4,7 @@ from bottle import default_app, route
 
 @route('/')
 def hello_world():
-    return 'Hello my felow Bottle user!'
+    return render_template('index.html')
 
 application = default_app()
 
